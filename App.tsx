@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import HomeStackNavigator from "./src/navigation/main/HomeStackNavigator";
+import { StatusBar } from "expo-status-bar";
+import { useCustomFonts } from "./src/hooks/useCustomFonts";
 
 export default function App() {
+  const isFontLoaded = useCustomFonts();
+  if (!isFontLoaded) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <StatusBar style="light" />
+      <NavigationContainer>
+        <HomeStackNavigator />
+      </NavigationContainer>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
