@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import HomeStackNavigator from "./src/navigation/main/HomeStackNavigator";
+import HomeStackNavigator from "./src/navigation/stacks/HomeStackNavigator";
 import { StatusBar } from "expo-status-bar";
 import { useCustomFonts } from "./src/hooks/useCustomFonts";
 
